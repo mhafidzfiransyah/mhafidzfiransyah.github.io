@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css -->
     <link rel="stylesheet" href="{{ site.baseurl }} /assets/css/styles.css">
+
+    <!-- javascript -->
     <script src="{{ site.baseurl }}/assets/js/script.js"></script>
+
+    <!-- plugins -->
+    {& feed_meta %}
+    {% seo %}
     <title>{{ page.title }}</title>
 </head>
 <body>
