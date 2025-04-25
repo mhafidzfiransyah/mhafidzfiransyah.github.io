@@ -1,1 +1,0 @@
-{"version":3,"sourceRoot":"","sources":["../../_sass/main.scss"],"names":[],"mappings":"AAAA;EACI;;;AAEJ;EACI;EACA;EACA","sourcesContent":[".current {\r\n    color: green;\r\n}\r\n.nama {\r\n    color: blue;\r\n    text-align: center;\r\n    text-decoration: underline;\r\n}"],"file":"styles.css"}
