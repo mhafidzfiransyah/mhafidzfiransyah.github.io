@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
     <!-- css -->
     <link rel="stylesheet" href="{{ site.baseurl }} /assets/css/styles.css">
+
+    <!-- favicon -->
+   <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
 
     <!-- javascript -->
     <script src="{{ site.baseurl }}/assets/js/script.js"></script>
@@ -18,5 +23,7 @@
 <body>
     {% include navigation.html %}
     {{content}}
+    {% include footer.html %}
+
 </body>
 </html>

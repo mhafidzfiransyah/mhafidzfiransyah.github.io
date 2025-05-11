@@ -1,8 +1,323 @@
+
+// Navbar--------------------------------------------------------------------------------------------------------------
 .current {
     color: green;
+
 }
 .nama {
     color: blue;
     text-decoration: underline;
+}
 
+// 🎨 Variables
+$bg: #121212;
+$primary: #00adb5;
+$text: #ffffff;
+$hover: #1f1f1f;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $bg;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  .navbar-brand {
+    font-size: 1.4rem;
+    color: $primary;
+    font-weight: bold;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: $text;
+    cursor: pointer;
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: $text;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      padding: 0.5rem;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background-color: $primary;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: $primary;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &.current {
+        color: $primary;
+        font-weight: bold;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  
+
+  // 📱 Responsive
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1rem;
+
+      a {
+        padding: 0.75rem 0;
+        text-align: center;
+      }
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: #000000;
+  color: #ddd;
+  border-radius: 2px;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
+//Home----------------------------------------------------------------------------------------------------------------
+
+// 🌈 Variabel warna untuk konsistensi
+$bg-color: #474343;
+$text-color: #333;
+$primary-color: #252b2b;
+$header-bg: #222;
+$header-color: #fff;
+$hover-color: #00adb5;
+$border-color: #ddd;
+
+.intro {
+  background-color: #000;         /* warna latar hitam */
+  color: #fff;                    /* warna teks putih */
+  padding: px;                  /* jarak isi */
+  margin: 10px auto;              /* jarak luar */
+  border-radius: 10px;            /* sudut membulat */
+  width: 80%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* bayangan */
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+
+// Section Content Styling
+.content {
+  background-color: $bg-color;
+  max-width: 900px;
+  margin: 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ 
+
+
+  p {
+    line-height: 1.6;
+    color: $text-color; 
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.profil-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; // agar tetap responsif di layar kecil
+}
+
+.foto-profil {
+  flex: 1;
+  max-width: 42%;
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 250px; // batas maksimum ukuran foto
+    height: auto;
+    margin-top: 40px;
+    border-radius: 10px;
+       border: 5px solid white; // Border dalam
+    outline: 4px solid #00b8d4; // Outline luar, warna biru navy
+    outline-offset: 5px; // Jarak antara border dan outline
+  }
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: white;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00acee; /* warna hover, bisa disesuaikan */
+}
+
+// Tabel Styling
+.biodata-table {
+  width: 100%;
+  margin-left: 10px;
+  max-width: 400px; // ✅ Lebih kecil
+  margin: 2rem auto; // ✅ Posisikan ke tengah halaman
+  border-collapse: collapse;
+  font-size: 0.85rem; // ✅ Font lebih kecil agar seimbang
+
+  th, td {
+    padding: 0.5rem 0.7rem;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+
+  tr.biodata-diri {
+    th {
+      background-color: #00adb5;
+      color: #fff;
+      font-size: 1rem;
+      text-align: center; // ✅ Pusatkan teks
+      padding: 0.8rem;
+    }
+  }
+
+  th {
+    background-color: #222;
+    color: #ffffff;
+    font-size: 0.9rem;
+  }
+
+  tr {
+    color: #ffffff;
+  }
+
+
+  tr:hover {
+    transition: 0.3s;
+    background-color: #0018b5;
+    color: rgb(255, 255, 255);
+  }
+
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+// Friend----------------------------------------------------------------------------------------------------------------
+// General styles for the friends page
+.friends-title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.sc {
+  background-color: #585151;
+  padding: 2rem;
+  max-width: 70%;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-friends {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+  font-family: Matura MT Script Capitals;
+
+  li {
+    margin: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 50px;
+      padding: 0.5rem;
+      background: black;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      font-weight: 500;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        background: #00adb5;
+        font-family: Elephant;
+        color: #121212;
+      }
+    }
+
+    // Khusus yang class "me"
+    a.me {
+      background: linear-gradient(135deg, #ff9800, #ff5722);
+      font-weight: bold;
+
+      &:hover {
+        background: linear-gradient(135deg, #ff5722, #ff9800);
+      }
+    }
+  }
 }
