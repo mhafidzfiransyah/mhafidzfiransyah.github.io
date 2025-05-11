@@ -84,30 +84,37 @@ $hover: #1f1f1f;
 
   
 
-  // 📱 Responsive
-  @media (max-width: 768px) {
-    flex-wrap: wrap;
+  // Responsive
+@media (max-width: 768px) {
+  flex-wrap: wrap;
 
-    .menu-toggle {
-      display: block;
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    background-color: $bg;
+    padding: 1rem;
+    width: 100px; // Lebar menu
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+
+    a {
+      padding: 0.75rem 0;
+      text-align: right; // Biar rapi ke kanan
     }
 
-    .navbar-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      margin-top: 1rem;
-
-      a {
-        padding: 0.75rem 0;
-        text-align: center;
-      }
-
-      &.active {
-        display: flex;
-      }
+    &.active {
+      display: flex;
     }
   }
+}
 }
 
 .footer {
@@ -120,7 +127,7 @@ $hover: #1f1f1f;
 
 //Home----------------------------------------------------------------------------------------------------------------
 
-// 🌈 Variabel warna untuk konsistensi
+// Variabel warna
 $bg-color: #474343;
 $text-color: #333;
 $primary-color: #252b2b;
@@ -130,13 +137,13 @@ $hover-color: #00adb5;
 $border-color: #ddd;
 
 .intro {
-  background-color: #000;         /* warna latar hitam */
-  color: #fff;                    /* warna teks putih */
-  padding: px;                  /* jarak isi */
-  margin: 10px auto;              /* jarak luar */
-  border-radius: 10px;            /* sudut membulat */
+  background-color: #000;        
+  color: #fff;                  
+  padding: px;                  
+  margin: 10px auto;             
+  border-radius: 10px;           
   width: 80%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* bayangan */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   font-size: 18px;
   line-height: 1.6;
   text-align: center;
@@ -150,7 +157,7 @@ $border-color: #ddd;
   margin: 1rem auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
- 
+
 
 
   p {
@@ -165,7 +172,7 @@ $border-color: #ddd;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap; // agar tetap responsif di layar kecil
+  flex-wrap: wrap; 
 }
 
 .foto-profil {
@@ -175,13 +182,13 @@ $border-color: #ddd;
 
   img {
     width: 100%;
-    max-width: 250px; // batas maksimum ukuran foto
+    max-width: 250px; 
     height: auto;
     margin-top: 40px;
     border-radius: 10px;
-       border: 5px solid white; // Border dalam
-    outline: 4px solid #00b8d4; // Outline luar, warna biru navy
-    outline-offset: 5px; // Jarak antara border dan outline
+    border: 5px solid white; 
+    outline: 4px solid #00b8d4; 
+    outline-offset: 5px; 
   }
 }
 
@@ -197,17 +204,17 @@ $border-color: #ddd;
 }
 
 .social-icons a:hover {
-  color: #00acee; /* warna hover, bisa disesuaikan */
+  color: #00acee;
 }
 
 // Tabel Styling
 .biodata-table {
   width: 100%;
   margin-left: 10px;
-  max-width: 400px; // ✅ Lebih kecil
-  margin: 2rem auto; // ✅ Posisikan ke tengah halaman
+  max-width: 400px; 
+  margin: 2rem auto; 
   border-collapse: collapse;
-  font-size: 0.85rem; // ✅ Font lebih kecil agar seimbang
+  font-size: 0.85rem;
 
   th, td {
     padding: 0.5rem 0.7rem;
@@ -220,7 +227,7 @@ $border-color: #ddd;
       background-color: #00adb5;
       color: #fff;
       font-size: 1rem;
-      text-align: center; // ✅ Pusatkan teks
+      text-align: center;
       padding: 0.8rem;
     }
   }
@@ -255,7 +262,6 @@ $border-color: #ddd;
 
 
 // Friend----------------------------------------------------------------------------------------------------------------
-// General styles for the friends page
 .friends-title {
   font-size: 2em;
   text-align: center;

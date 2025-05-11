@@ -1,10 +1,20 @@
 <nav class="navbar">
-    <div class="navbar-brand">M.Hafidz Firansyah</div>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    <div class="navbar-links" id="navbar-links">
+  <div class="navbar-brand">M.Hafidz Firansyah</div>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+  <div class="navbar-links" id="navbar-links">
     {% for item in site.data.navigation %} 
-    <a href="{{ item.link }}" {% if page.url == item.link %} class="current"{% endif %}>
-            {{ item.name }}
-    </a>
+      <a href="{{ item.link }}" {% if page.url == item.link %} class="current"{% endif %}>
+        {{ item.name }}
+      </a>
     {% endfor %}
+  </div>
 </nav>
+
+<!-- Script diletakkan DI LUAR nav -->
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    document.getElementById('navbar-links').classList.toggle('active');
+  });
+</script>
+
