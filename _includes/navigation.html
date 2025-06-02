@@ -1,20 +1,67 @@
-<nav class="navbar">
-  <div class="navbar-brand">M.Hafidz Firansyah</div>
+<ul class="navbar">
+  <div class="navbar-brand" id="digital-clock"></div>
   <div class="menu-toggle" id="menu-toggle">&#9776;</div>
 
   <div class="navbar-links" id="navbar-links">
     {% for item in site.data.navigation %} 
+    <li>
       <a href="{{ item.link }}" {% if page.url == item.link %} class="current"{% endif %}>
         {{ item.name }}
       </a>
+    </li>
     {% endfor %}
   </div>
-</nav>
+</ul>
 
-<!-- Script diletakkan DI LUAR nav -->
+<!-- Script untuk toggle menu -->
 <script>
   document.getElementById('menu-toggle').addEventListener('click', function () {
     document.getElementById('navbar-links').classList.toggle('active');
   });
+
+  // Script untuk jam digital
+  function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    document.getElementById('digital-clock').textContent = timeString;
+  }
+
+  setInterval(updateClock, 1000); // Update setiap detik
+  updateClock(); // Jalankan pertama kali
+
+  // Tambahkan tombol mode gelap/terang di sebelah jam digital
+  const digitalClock = document.getElementById('digital-clock');
+
+  // Bungkus jam digital dan tombol dalam elemen fleksibel
+  const wrapper = document.createElement('div');
+  wrapper.className = 'clock-wrapper';
+  digitalClock.parentNode.insertBefore(wrapper, digitalClock);
+  wrapper.appendChild(digitalClock);
+
+  const modeToggleBtn = document.createElement('button');
+  modeToggleBtn.className = 'mode-toggle';
+  modeToggleBtn.innerHTML = '🌙';
+  wrapper.appendChild(modeToggleBtn);
+
+  // Fungsi toggle
+  modeToggleBtn.addEventListener('click', function () {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    modeToggleBtn.textContent = isLight ? '☀️' : '🌙';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+
+  // Cek preferensi tersimpan
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light-mode');
+      modeToggleBtn.textContent = '☀️';
+    }
+  });
 </script>
+
 

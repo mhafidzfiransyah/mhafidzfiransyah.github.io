@@ -1,0 +1,145 @@
+.current {
+  color: #F4A300; 
+}
+
+.nama {
+  color: #1ABC9C; 
+  text-decoration: underline;
+}
+
+.navbar {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00126e;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 255, 255, 0.435);
+  border: 1px solid rgb(0, 255, 0);
+
+  .navbar-brand {
+    font-family: Baskerville Old Face;
+    font-size: 1.9rem;
+    color: #00fff2; 
+    text-shadow: 0 2px 8px rgba(55, 255, 0, 0.435);
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: #F5F5F5; 
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      padding: 0.5rem;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background-color: #37ff00;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: #00ffe1; 
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &.current {
+        color: #00ffd5; 
+        font-weight: bold;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 2rem;
+      background-color: #1ABC9C; 
+      padding: 1rem;
+      width: 100px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      z-index: 999;
+
+      a {
+        padding: 0.75rem 0;
+        text-align: center;
+      }
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+}
+
+.clock-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mode-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  margin-left: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+body {
+  background-color: #000000; 
+  color: #FFFFFF; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer {
+  background-color: #000000;
+  color: #B5B89F; 
+  border-radius: 2px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

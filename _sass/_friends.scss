@@ -1,0 +1,67 @@
+// Friend----------------------------------------------------------------------------------------------------------------
+.friends-title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #f3f3f3;
+}
+
+.sc {
+  background-color: #1a1a20;
+  padding: 2rem;
+  max-width: 70%;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(98, 90, 90, 0.1);
+  border: 1px solid rgb(0, 255, 0);
+}
+
+.list-friends {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+  font-family: Matura MT Script Capitals;
+
+  li {
+    margin: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 50px;
+      padding: 0.5rem;
+      background: black;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      font-weight: 500;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        background: #00adb5;
+        font-family: Elephant;
+        color: #121212;
+      }
+    }
+
+    // Khusus yang class "me"
+    a.me {
+      background: linear-gradient(135deg, #ff9800, #ff5722);
+      font-weight: bold;
+
+      &:hover {
+        background: linear-gradient(135deg, #ff5722, #ff9800);
+      }
+    }
+  }
+}
