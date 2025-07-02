@@ -35,33 +35,33 @@
   // Tambahkan tombol mode gelap/terang di sebelah jam digital
   const digitalClock = document.getElementById('digital-clock');
 
-  // Bungkus jam digital dan tombol dalam elemen fleksibel
-  const wrapper = document.createElement('div');
-  wrapper.className = 'clock-wrapper';
-  digitalClock.parentNode.insertBefore(wrapper, digitalClock);
-  wrapper.appendChild(digitalClock);
+  // // Bungkus jam digital dan tombol dalam elemen fleksibel
+  // const wrapper = document.createElement('div');
+  // wrapper.className = 'clock-wrapper';
+  // digitalClock.parentNode.insertBefore(wrapper, digitalClock);
+  // wrapper.appendChild(digitalClock);
 
-  const modeToggleBtn = document.createElement('button');
-  modeToggleBtn.className = 'mode-toggle';
-  modeToggleBtn.innerHTML = '🌙';
-  wrapper.appendChild(modeToggleBtn);
+  // const modeToggleBtn = document.createElement('button');
+  // modeToggleBtn.className = 'mode-toggle';
+  // modeToggleBtn.innerHTML = '🌙';
+  // wrapper.appendChild(modeToggleBtn);
 
-  // Fungsi toggle
-  modeToggleBtn.addEventListener('click', function () {
-    document.body.classList.toggle('light-mode');
-    const isLight = document.body.classList.contains('light-mode');
-    modeToggleBtn.textContent = isLight ? '☀️' : '🌙';
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  });
+  // // Fungsi toggle
+  // modeToggleBtn.addEventListener('click', function () {
+  //   document.body.classList.toggle('light-mode');
+  //   const isLight = document.body.classList.contains('light-mode');
+  //   modeToggleBtn.textContent = isLight ? '☀️' : '🌙';
+  //   localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  // });
 
-  // Cek preferensi tersimpan
-  window.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-      document.body.classList.add('light-mode');
-      modeToggleBtn.textContent = '☀️';
-    }
-  });
+  // // Cek preferensi tersimpan
+  // window.addEventListener('DOMContentLoaded', () => {
+  //   const savedTheme = localStorage.getItem('theme');
+  //   if (savedTheme === 'light') {
+  //     document.body.classList.add('light-mode');
+  //     modeToggleBtn.textContent = '☀️';
+  //   }
+  // });
 </script>
 
 
